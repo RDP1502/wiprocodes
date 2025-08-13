@@ -1,0 +1,14 @@
+.navbar-brand{
+    color : red
+}
+
+.carousel-inner h5, p{
+     color : white;
+     font-family: cursive;
+     
+}
+
+.carousel-control-prev .carousel-control-next{
+    color:white;
+
+}

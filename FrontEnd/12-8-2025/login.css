@@ -1,0 +1,12 @@
+h1{
+    color: green;
+    font-family: cursive;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 5px;
+}
+.mb-3, .form-label{
+    font-family: cursive;
+}

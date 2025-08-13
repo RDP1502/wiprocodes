@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+.flexbox {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.item {
+    width: 45%;
+    text-align: center;
+    border-image-slice: 20%;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 4px;
+}

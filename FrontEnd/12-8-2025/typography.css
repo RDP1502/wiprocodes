@@ -1,0 +1,17 @@
+.blockquote-footer{
+    margin-left: 60px;
+    color: gold;
+    font-family: cursive;
+    font-size: medium;
+}
+
+.blockquote{
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: large;
+}
+
+*{
+    margin : 50px, 50px, 50px, 50px;
+    padding: 20px, 20px, 20px, 20px;
+}

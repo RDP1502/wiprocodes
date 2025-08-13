@@ -1,0 +1,31 @@
+.container  {
+    background-color: rgb(205, 230, 230);
+    justify-content: left;
+}
+
+.nav-box{
+    align-items: center;
+}
+
+.heading{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.blockquote {
+    font-style: italic;
+    text-align: center;
+}
+
+.container-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.card{
+    grid-template-columns: 2fr 1fr;
+    border: 1px solid #ccc;
+}

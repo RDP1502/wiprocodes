@@ -1,0 +1,39 @@
+*{
+    margin: 20px;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+h1, h2{
+    color: gold;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+p{
+    color : royalblue;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#demo{
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+p.text{
+    font-style: oblique;
+    color: red;
+}
+
+div{
+    background-color: lightgreen;
+    padding: 15px;
+    border: 1px solid darkgreen;
+    border-radius: 10px;
+}
+div.c1{
+    background-color: lightblue;
+    border: 2px solid blue;
+}

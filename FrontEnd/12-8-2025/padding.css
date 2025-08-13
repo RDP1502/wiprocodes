@@ -1,0 +1,11 @@
+.brd{
+    border: 5px solid red;
+}
+
+.pad{
+    padding: 20px, 20px, 20px, 20px;
+}
+
+.mgn{
+    margin: 50px, 50px, 50px, 50px;
+}
