@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.todo-container {
+  background: white;
+  padding: 20px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+#addTaskBtn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#addTaskBtn:hover {
+  background: #45a049;
+}
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#taskList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background: #f9f9f9;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
