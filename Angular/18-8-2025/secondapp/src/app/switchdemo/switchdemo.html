@@ -1,0 +1,26 @@
+<p>switchdemo works!</p>
+
+<select [(ngModel)]="color">
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+  <option value="default">Default</option>
+</select>
+
+@switch (color) {
+
+    @case ('red') {
+        <h2 id="red"> This is Red case</h2>
+    }
+    @case ('green') {
+        <h2 id = "green"> This is Green case</h2>
+    }
+    @case ('blue') {
+        <h2 id="blue"> This is Blue case</h2>
+    }
+    @case ('default') {
+        <h2 id = "black"> This is Default</h2>
+    }
+
+
+}

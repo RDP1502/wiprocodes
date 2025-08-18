@@ -1,0 +1,9 @@
+<p>searchfilter works!</p>
+
+<input type = "text" [(ngModel)] = "searchText" placeholder=" search ...">
+<select> 
+     @for (item of filteredList; track $index) {
+    <option [value]="item">{{ item }}</option>
+  }
+    
+</select>

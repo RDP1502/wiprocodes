@@ -1,0 +1,27 @@
+
+<input type="checkbox" (click)="onClick()"> click this
+
+
+@if (flag) {
+
+    <h2> This is unhide</h2>
+} 
+@else {
+    <h2> This is hide</h2>
+}
+
+
+<h1> Drop down</h1>
+<button type = "button" (click)="onClick()"> Load</button>
+<select>
+    @if (flag) {
+        @for (item of countryNames; track $index) {
+            <option value = "country"> {{item}}</option>     
+        }
+  
+    }
+    @else {
+        <option value = "country"> Select the country</option> 
+    }
+
+</select>
