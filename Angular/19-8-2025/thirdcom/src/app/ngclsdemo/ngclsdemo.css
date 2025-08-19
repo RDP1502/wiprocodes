@@ -1,0 +1,11 @@
+.app{
+    border: 5px solid red;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.app2{
+    color: lightgreen;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 10px;
+}

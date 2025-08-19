@@ -1,0 +1,11 @@
+
+<div class="card">
+  <div class="card-header">
+    {{task.taskCategory}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{task.taskName}} This is Name</h5>
+    <p class="card-text">{{task.taskDescription}} This is Description</p>
+    <a href="#" class="btn btn-primary" (click)="onDelete(task.taskId)">Delete</a>
+  </div>
+</div>
