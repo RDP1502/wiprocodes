@@ -47,7 +47,7 @@ export class VehicalCom {
 
   edit(vehicalId:string){
     this.vehicalService.getVehicalsById(vehicalId).subscribe((data:Vehical)=>{
-      this.vehicalEdit=data;
+      this.vehicalEdit={...data};
       this.cdr.detectChanges();
     }, (error)=>{
       console.log("Error fetching vehical by Id", error)

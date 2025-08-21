@@ -15,13 +15,6 @@
       "id": "5574"
     },
     {
-      "make": "Nissan",
-      "model": "GT-R",
-      "fuleType": "Gasoline",
-      "price": 676543,
-      "id": "f5d2"
-    },
-    {
       "id": "70a1",
       "make": "Mustang",
       "model": "GT500",
@@ -43,11 +36,11 @@
       "price": "5099999"
     },
     {
-      "id": "0472",
-      "make": "",
-      "model": "",
-      "fuleType": "",
-      "price": 0
+      "id": "3ca5",
+      "make": "Ford",
+      "model": "Mustang GT",
+      "fuleType": "Petrol",
+      "price": "7464000"
     }
   ]
 }

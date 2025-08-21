@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     @for (vehical of vehicals; track $index) {
         <div>
             <h2> Vehical Details : </h2>
@@ -27,16 +27,78 @@
     Add Vehical Fule Type: <input type="text" [(ngModel)]="vehicalAdd.fuleType" placeholder="Enter fule type here">
     Add Vehical Price: <input type="text" [(ngModel)]="vehicalAdd.price" placeholder="Enter price here">
     <button (click)="save()">Save New Vehical</button>
-</div>
+</div> -->
 
-@for (vehical of vehicals; track $index) {
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Unique Id: {{ vehical.id}}</h5>
-    <p class="card-text">Make : {{vehical.make}}, Model : {{vehical.model}} </p>
-    <p class="card-text">Fuel Type : {{vehical.fuleType}}, Price : {{vehical.price | currency:'INR'}}</p>
-    <a href="#" class="btn btn-primary" (click)="edit(vehical.id)">Edit</a>
-    <a href="#" class="btn btn-primary" (click)="delete(vehical.id)">Delete</a>
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid justify-content-center">
+    <span class="navbar-brand mb-0 h1">Vehical Details</span>
+  </div>
+</nav>
+<!-- Take user input for adding new vehical -->
+
+
+
+<div class="container text-center">
+  <div class="row row-cols-4">
+    <div class="col"><div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Vehical Make</span>
+  <input type="text" [(ngModel)]="vehicalEdit.make" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Enter vehical make here">
+</div></div>
+    <div class="col"><div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Vehical Model</span>
+  <input type="text" [(ngModel)]="vehicalEdit.model" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Enter vehical make here">
+</div></div>
+    <div class="col"><div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Vehical Fuel Type</span>
+  <input type="text" [(ngModel)]="vehicalEdit.fuleType" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Enter vehical make here">
+</div></div>
+    <div class="col"><div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Vehical Price</span>
+  <input type="text" [(ngModel)]="vehicalEdit.price" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Enter vehical make here">
+  <button class="btn btn-success" (click)="update()">Updates</button>
+</div></div>
   </div>
 </div>
-}
+
+<!-- Add new Vehical -->
+
+<div class="container text-center">
+  <div class="row row-cols-4">
+    <div class="col"><div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Vehical Make</span>
+  <input type="text" [(ngModel)]="vehicalAdd.make" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Enter vehical make here">
+</div></div>
+    <div class="col"><div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Vehical Model</span>
+  <input type="text" [(ngModel)]="vehicalAdd.model" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Enter vehical make here">
+</div></div>
+    <div class="col"><div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Vehical Fuel Type</span>
+  <input type="text" [(ngModel)]="vehicalAdd.fuleType" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Enter vehical make here">
+</div></div>
+    <div class="col"><div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Vehical Price</span>
+  <input type="text" [(ngModel)]="vehicalAdd.price" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Enter vehical make here">
+  <button class="btn btn-success" (click)="save()">Add</button>
+</div></div>
+  </div>
+</div>
+
+<!-- cards showing vehicals details -->
+<div class="container text-center">
+  <div class="row row-cols-4">
+        @for (vehical of vehicals; track $index) {
+        <div class="col">
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Unique Id: {{ vehical.id}}</h5>
+            <p class="card-text">Make : {{vehical.make}}, Model : {{vehical.model}} </p>
+            <p class="card-text">Fuel Type : {{vehical.fuleType}}, Price : {{vehical.price | currency:'INR'}}</p>
+            <a href="#" class="btn btn-primary" (click)="edit(vehical.id)">Edit</a>
+            <a href="#" class="btn btn-primary" (click)="delete(vehical.id)">Delete</a>
+        </div>
+        </div>
+        </div>
+        }
+    </div>
+  </div>
