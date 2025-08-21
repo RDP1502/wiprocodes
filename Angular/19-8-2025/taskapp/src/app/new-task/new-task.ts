@@ -9,10 +9,8 @@ import { FormControl, FormGroup, NgModel, Validators } from '@angular/forms';
   styleUrl: './new-task.css'
 })
 export class NewTask {
-[x: string]: any;
-addTask(arg0: string,arg1: string,arg2: string) {
-throw new Error('Method not implemented.');
-}
+
+
  @Input() task!: Task;
  @Output() delete = new EventEmitter<number>()
 

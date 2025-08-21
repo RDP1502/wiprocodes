@@ -1,0 +1,42 @@
+<div>
+    @for (vehical of vehicals; track $index) {
+        <div>
+            <h2> Vehical Details : </h2>
+            <h3> Vehical unique Id: {{ vehical.id}} </h3>
+            <h3> Vehical Make and Model : {{vehical.make}} , {{vehical.model}}</h3> 
+            <h3> Vehical Fule Type  : {{vehical.fuleType}}, Price: {{vehical.price| currency: 'INR'}} </h3>
+            <button (click)="edit(vehical.id)">Edit</button>
+            <button (click)="delete(vehical.id)">Delete</button>
+        </div>
+    }
+</div>
+
+<div>
+    <h2>Update the vehical details here.</h2>
+    Vehical Make: <input type="text" [(ngModel)]="vehicalEdit.make" placeholder="Update vehical make here">
+    Vehical Model: <input type="text" [(ngModel)]="vehicalEdit.model" placeholder="Update vehical model here">
+    Vehical Fule Type: <input type="text" [(ngModel)]="vehicalEdit.fuleType" placeholder="Update fule type here" >
+    Vehical Price: <input type="text" [(ngModel)]="vehicalEdit.price" placeholder="Update price here">
+    <button (click)="update()">Save Changes</button>
+</div>
+
+<div>
+    <h2>Add new vehical details here.</h2>
+    Add Vehical Make: <input type="text" [(ngModel)]="vehicalAdd.make" placeholder="Enter vehical make here">
+    Add Vehical Model: <input type="text" [(ngModel)]="vehicalAdd.model" placeholder="Enter vehical model here">
+    Add Vehical Fule Type: <input type="text" [(ngModel)]="vehicalAdd.fuleType" placeholder="Enter fule type here">
+    Add Vehical Price: <input type="text" [(ngModel)]="vehicalAdd.price" placeholder="Enter price here">
+    <button (click)="save()">Save New Vehical</button>
+</div>
+
+@for (vehical of vehicals; track $index) {
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Unique Id: {{ vehical.id}}</h5>
+    <p class="card-text">Make : {{vehical.make}}, Model : {{vehical.model}} </p>
+    <p class="card-text">Fuel Type : {{vehical.fuleType}}, Price : {{vehical.price | currency:'INR'}}</p>
+    <a href="#" class="btn btn-primary" (click)="edit(vehical.id)">Edit</a>
+    <a href="#" class="btn btn-primary" (click)="delete(vehical.id)">Delete</a>
+  </div>
+</div>
+}

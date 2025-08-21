@@ -3,11 +3,10 @@
     <h1>Task Book</h1>
 </div>
 
-<app-new-task> </app-new-task>
+
 <div class = "home">
-         <app-task-list></app-task-list>
-         @for (item of tasks; track $index) {
-            <app-task-list> </app-task-list>
+    <app-task-list [tasks]="tasks" (addTask)="tasks.push($event)"></app-task-list>
+         @for (item of tasks; track item.taskId) {
+            <app-new-task [task]="item"> </app-new-task>
          }
 </div>
-

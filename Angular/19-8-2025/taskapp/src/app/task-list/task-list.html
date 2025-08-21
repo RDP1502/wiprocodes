@@ -1,7 +1,5 @@
 
 
-
-
 <div class="container mt-4" >
   <h3 class="mb-3">Add a Task</h3>
 <!-- (submit)="addTask(name.value, description.value, category.value)" -->
@@ -9,23 +7,23 @@
     <!-- Task Name -->
     <div class="mb-3">
       <label class="form-label">Task Name</label>
-      <input #name type="text" class="form-control" formControlName="name" placeholder="Enter task name">
+      <input #name type="text" class="form-control"  placeholder="Enter task name">
     </div>
 
     <!-- Task Description -->
     <div class="mb-3">
       <label class="form-label">Description</label>
-      <textarea #description class="form-control" rows="3" formControlName="description" placeholder="Enter task description"></textarea>
+      <textarea #description class="form-control" rows="3"  placeholder="Enter task description"></textarea>
     </div>
 
     <!-- Task Category -->
     <div class="mb-3">
       <label for="Task Category"> Enter Task Category</label>
-       <input #category type="text" class="form-control" formControlName="category" placeholder="Enter task category">
+       <input #category type="text" class="form-control"  placeholder="Enter task category">
     </div>
 
     <!-- Add Button -->
-    <button type="submit" class="btn btn-success">Add Task</button>
+    <button type="submit" class="btn btn-success" (click)="onAddTask(name.value, description.value, category.value)">Add Task</button>
   </form>
 </div>
 

@@ -10,12 +10,17 @@ import { NewTask } from '../new-task/new-task';
 })
 export class TaskList {
    @Input() tasks: Task[] = []
-   @Output() remove = new EventEmitter<number>()
+   @Output() addTask = new EventEmitter<Task>()
 
-  onDelete(tasks:Task){
-    this.remove.emit(tasks.taskId)
+   nextId:number = 0
+  onAddTask(name:string, description:string, category:string){
+    const task: Task = {
+      taskId: this.nextId++ ,
+      taskName:name,
+      taskDescription:description,
+      taskCategory:category
+    }
+    this.addTask.emit(task)
   }
-
-
 
 }

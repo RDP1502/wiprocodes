@@ -11,6 +11,7 @@ import { Task } from '../task';
 })
 export class Home {
 num:number[]=[0,1,2,3]
+
 tasks: Task[]=[
     {
       taskId: 0,

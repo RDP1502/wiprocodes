@@ -1,0 +1,14 @@
+<input type="text" [(ngModel)] = "userInput" placeholder="Enter text here">
+<p> Entered Text is : {{ userInput | uppercase }}</p>
+
+<h2>Ex2 - Date Pipe</h2>
+<input type="date" [(ngModel)] = "dateValue">
+<p> Date Value is : {{ dateValue | date:'short'}}</p>
+
+<h2>Ex3 - Fahrenheit pipe</h2>
+<input type="text" [(ngModel)] = "centigrade">
+<p> Fahrenheit is: {{ centigrade | fahrenheit}} </p>
+
+<h2>ex4 - custome directive</h2>
+<input type="text" [(ngModel)] = "message">
+<p appHighdir>{{ message }}</p>

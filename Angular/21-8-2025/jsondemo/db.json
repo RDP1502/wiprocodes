@@ -1,0 +1,53 @@
+{
+  "vehical": [
+    {
+      "make": "Mustang",
+      "model": "GT50",
+      "fuleType": "Diesle",
+      "price": 243344,
+      "id": "6ea3"
+    },
+    {
+      "make": "Shellby",
+      "model": "GT500",
+      "fuleType": "Diesle",
+      "price": 24334400,
+      "id": "5574"
+    },
+    {
+      "make": "Nissan",
+      "model": "GT-R",
+      "fuleType": "Gasoline",
+      "price": 676543,
+      "id": "f5d2"
+    },
+    {
+      "id": "70a1",
+      "make": "Mustang",
+      "model": "GT500",
+      "fuleType": "Petrol",
+      "price": 24339944
+    },
+    {
+      "id": "3faa",
+      "make": "Toyota",
+      "model": "Supra",
+      "fuleType": "Petrol",
+      "price": 339944
+    },
+    {
+      "id": "78b3",
+      "make": "2025 Chevrolet Corvette",
+      "model": " ZR1",
+      "fuleType": "Petrol",
+      "price": "5099999"
+    },
+    {
+      "id": "0472",
+      "make": "",
+      "model": "",
+      "fuleType": "",
+      "price": 0
+    }
+  ]
+}
