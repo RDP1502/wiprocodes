@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "95fe",
+      "name": "car",
+      "price": "34333",
+      "category": "vehical"
+    },
+    {
+      "id": "a506",
+      "name": "brush",
+      "price": "33",
+      "category": "general"
+    },
+    {
+      "id": "04a0",
+      "name": "ps5",
+      "price": "500000",
+      "category": "gaming"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+.product{
+    margin: 10px, 10px, 10px, 10px;
+    
+}
+
+.button{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.button:hover{
+    background-color: green;
+}
+
+.card-body{
+    padding: 30px;
+}
+
+.card:hover{
+    box-shadow: 5px 5px #888888;
+}
+
+.card{
+    border: 2px solid black;
+    color: black;
+    background-image: radial-gradient(to right, #ff7e5f, #feb47b);
+}

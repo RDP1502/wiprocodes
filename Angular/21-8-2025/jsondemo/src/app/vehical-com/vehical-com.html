@@ -94,7 +94,7 @@
             <h5 class="card-title">Unique Id: {{ vehical.id}}</h5>
             <p class="card-text">Make : {{vehical.make}}, Model : {{vehical.model}} </p>
             <p class="card-text">Fuel Type : {{vehical.fuleType}}, Price : {{vehical.price | currency:'INR'}}</p>
-            <a href="#" class="btn btn-primary" (click)="edit(vehical.id)">Edit</a>
+            <a href="#" class="btn btn-primary me-2" (click)="edit(vehical.id)">Edit</a>
             <a href="#" class="btn btn-primary" (click)="delete(vehical.id)">Delete</a>
         </div>
         </div>

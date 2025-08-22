@@ -2,7 +2,7 @@
   "vehical": [
     {
       "make": "Mustang",
-      "model": "GT50",
+      "model": "GT500",
       "fuleType": "Diesle",
       "price": 243344,
       "id": "6ea3"
@@ -41,6 +41,13 @@
       "model": "Mustang GT",
       "fuleType": "Petrol",
       "price": "7464000"
+    },
+    {
+      "id": "314f",
+      "make": "Honda",
+      "model": "City",
+      "fuleType": "Petrol",
+      "price": "8000090"
     }
   ]
 }
