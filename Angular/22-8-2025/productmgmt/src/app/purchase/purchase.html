@@ -1,0 +1,69 @@
+
+<div class="container py-4">
+  <h2 class="mb-3">Purchase Product</h2>
+
+  <!-- Product selector -->
+  <div class="mb-3">
+    <label for="productSelect" class="form-label">Select Product</label>
+    <select
+      id="productSelect"
+      class="form-select"
+      [(ngModel)]="selectedProductId"
+      name="productSelect"
+      (change)="onSelectChange()"
+    >
+      <option value="">-- Select a product --</option>
+      <option *ngFor="let p of products" [value]="p.id">
+        {{ p.name }} (Available: {{ p.quantity || 0 }})
+      </option>
+    </select>
+  </div>
+
+  <!-- Product details -->
+  <div *ngIf="selectedProduct" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title mb-2">{{ selectedProduct.name }}</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <div><strong>Category:</strong> {{ selectedProduct.category }}</div>
+          <div><strong>Price:</strong> {{ selectedProduct.price | currency }}</div>
+        </div>
+        <div class="col-md-6">
+          <div><strong>Available Qty:</strong> {{ selectedAvailable }}</div>
+          <div class="mt-2">
+            <label for="qty" class="form-label">Purchase Quantity</label>
+            <input
+              id="qty"
+              type="number"
+              class="form-control"
+              [(ngModel)]="purchaseQty"
+              name="qty"
+              min="1"
+              [max]="selectedAvailable"
+            />
+            <div class="form-text text-danger" *ngIf="purchaseQty <= 0">
+              Quantity must be at least 1.
+            </div>
+            <div class="form-text text-danger" *ngIf="purchaseQty > selectedAvailable">
+              Quantity cannot exceed available stock ({{ selectedAvailable }}).
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error banner -->
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Actions -->
+  <button
+    class="btn btn-primary"
+    (click)="onPurchase()"
+    [disabled]="!selectedProduct || isQtyInvalid"
+  >
+    Place Order
+  </button>
+</div>

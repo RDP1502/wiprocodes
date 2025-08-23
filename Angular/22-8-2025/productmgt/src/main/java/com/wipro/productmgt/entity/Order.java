@@ -1,5 +1,7 @@
 package com.wipro.productmgt.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,23 +12,23 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name ="products")
-public class Product {
+@Table(name ="orders")
+public class Order {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	
 	@Column(name = "product_name")
-	String name;
+	String productName;
 	
-	@Column(name = "category")
-	String category;
+	@Column(name = "order_quantity")
+	int orderQuantity;
 	
-	@Column(name = "price")
-	double price;
+	@Column(name ="order_date")
+	LocalDate date;
 	
-	@Column(name = "quantity")
-	int quantity;
-	
+	@Column(name = "product_id")
+	int productId;
+
 }

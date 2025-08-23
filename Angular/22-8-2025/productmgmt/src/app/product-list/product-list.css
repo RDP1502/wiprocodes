@@ -27,4 +27,5 @@
     border: 2px solid black;
     color: black;
     background-image: radial-gradient(to right, #ff7e5f, #feb47b);
+    border-radius : 10px, 10px,10px,10px;
 }

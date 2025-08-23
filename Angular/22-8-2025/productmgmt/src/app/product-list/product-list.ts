@@ -13,6 +13,7 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class ProductList {
 
+
   constructor(private productService: ProductService, private router: Router){}
 
   products:Product[]=[]
@@ -28,4 +29,10 @@ export class ProductList {
   addProduct(){
     this.router.navigate(['/addProduct'])
   }
+
+  BuyNow() {
+    this.router.navigate(['/purchase'])
+}
+
+ 
 }

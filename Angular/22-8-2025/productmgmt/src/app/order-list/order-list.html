@@ -1,0 +1,25 @@
+<div>
+    <button (click)="toProductList()"> Go to Product List Page</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Order Id</th>
+      <th scope="col">Product Id</th>
+      <th scope="col">Date</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Quantity</th>
+    </tr>
+  </thead>
+  @for (order of orders; track $index) {
+  <tbody>
+    <tr>
+      <th scope="row">{{order.id}}</th>
+      <td>{{order.productId}}</td>
+      <td>{{order.date | date:'short'}}</td>
+      <td>{{order.productName}}</td>
+      <td>{{order.orderQuantity}}</td>
+    </tr>
+  </tbody>
+  }
+</table>
+</div>

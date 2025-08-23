@@ -32,6 +32,9 @@ export class ProductService {
       return this.http.delete<void>(`${this.url}/${id}`);
     }
 
-
+    purchaseProduct(id:string, quantity:number):Observable<void>{
+      let url = "http://localhost:9000/orders"
+      return this.http.patch<void>(`${this.url}/${id}`, {quantity});
+    }
   
 }

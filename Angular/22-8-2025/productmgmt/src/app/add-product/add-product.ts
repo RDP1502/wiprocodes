@@ -11,14 +11,16 @@ import { FormsModule } from '@angular/forms';
 })
 export class AddProduct {
 
+
   constructor(private productService: ProductService, private router: Router){}
 
   name:string='';
   price:number=0;
-  category:string=''
+  category:string='';
+  quantity:number =0;
 
   submit(){
-    this.productService.addProduct({name:this.name, price:this.price, category:this.category}).subscribe((response)=>{
+    this.productService.addProduct({name:this.name, price:this.price, category:this.category, quantity:this.quantity}).subscribe((response)=>{
       this.name= '',
       this.price = 0,
       this.category =''

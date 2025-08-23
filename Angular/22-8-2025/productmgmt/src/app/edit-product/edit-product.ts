@@ -21,7 +21,8 @@ export class EditProduct {
   product:Product={
     name:'',
     category:'',
-    price:0
+    price:0,
+    quantity:0
   }
 
 
