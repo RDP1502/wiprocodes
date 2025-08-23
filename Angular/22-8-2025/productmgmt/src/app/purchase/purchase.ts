@@ -61,15 +61,17 @@ export class Purchase implements OnInit {
     this.errorMessage = '';
 
     if (!this.selectedProductId || !this.selectedProduct) {
-      this.errorMessage = 'Please select a product.';
+      
+      alert("Please select a product ")
       return;
     }
     if (this.purchaseQty <= 0) {
-      this.errorMessage = 'Quantity must be at least 1.';
+      
+      alert("Please enter valid Quantity")
       return;
     }
     if (this.purchaseQty > this.selectedAvailable) {
-      this.errorMessage = `Quantity cannot exceed available stock (${this.selectedAvailable}).`;
+     alert("Quantity exceeds available stock");
       return;
     }
 
