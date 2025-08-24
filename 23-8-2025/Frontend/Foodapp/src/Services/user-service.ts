@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../Interface/user';
 import { Observable } from 'rxjs';
+import { JwtToken } from '../Interface/jwt-token';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,15 @@ export class UserService {
 
   constructor(private http: HttpClient){}
 
-  login(user:User):Observable<User>{
-    return this.http.post<User>('http://localhost:9010/user/login', user)
+   private url:string = "http://localhost:9191/user"
+
+  login(user:User):Observable<JwtToken>{
+    console.log('in the user service')
+    return this.http.post<JwtToken>(`${this.url}/login`, user)
+  }
+
+  getUser():Observable<User[]>{
+    return this.http.get<User[]>(this.url)
   }
   
 }

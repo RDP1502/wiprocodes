@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../Interface/user';
+import { Food } from '../Interface/food';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,18 @@ export class FoodService {
   constructor(private http:HttpClient, 
   ){}
 
-  getFoods():Observable<User[]>{
-    return this.http.get<User[]>('http://localhost:9012/foods')
+  foodUrl:string = 'http://localhost:9191/foods'
+
+  getFoods():Observable<Food[]>{
+    return this.http.get<Food[]>(this.foodUrl)
+  }
+
+  addFoods(foods:Food):Observable<Food>{
+    return this.http.post<Food>(this.foodUrl, foods)
+  }
+
+  deleteFood(id:number){
+    return this.http.delete(`${this.foodUrl}/${id}`)
   }
 
 

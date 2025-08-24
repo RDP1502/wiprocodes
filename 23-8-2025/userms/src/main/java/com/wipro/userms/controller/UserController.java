@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wipro.userms.dto.Token;
 import com.wipro.userms.entity.User;
 import com.wipro.userms.service.UserService;
 
@@ -53,12 +54,11 @@ public class UserController {
 	}
 	
 	@PostMapping("/login")
-	User login(@RequestBody User user)
+	Token login(@RequestBody User user)
 	{
-		String jwtToken=userServie.login(user);
-		System.out.println(jwtToken);
 		
-		return user;
+		
+		return userServie.login(user);
 		
 	}
 

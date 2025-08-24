@@ -2,6 +2,7 @@ package com.wipro.userms.service;
 
 import java.util.List;
 
+import com.wipro.userms.dto.Token;
 import com.wipro.userms.entity.User;
 
 public interface UserService {
@@ -10,6 +11,6 @@ public interface UserService {
 	User findById(int id);
 	void save(User user);
 	void deleteById(int id);
-	String login(User user);
+	Token login(User user);
 
 }
