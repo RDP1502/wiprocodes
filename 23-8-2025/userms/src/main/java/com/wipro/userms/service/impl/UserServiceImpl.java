@@ -20,6 +20,7 @@ import com.wipro.userms.entity.User;
 import com.wipro.userms.repo.UserRepo;
 import com.wipro.userms.service.UserService;
 import com.wipro.userms.util.AppConstant;
+import com.wipro.userms.util.EncryptUtil;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -48,6 +49,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void save(User user) {
 		// TODO Auto-generated method stub
+		String password = user.getPassWord();
+		String[] passWordSalt = EncryptUtil.getEncryptedPassword(password, null);
+		user.setPassWord(passWordSalt[0]);
+		user.setSalt(passWordSalt[1]);		
 		userRepo.save(user);
 
 	}
@@ -62,8 +67,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public Token login(User user) {
 		// TODO Auto-generated method stub
+		User userSalt = userRepo.findByUserEmail(user.getUserEmail());
 		
-		User userData = userRepo.findByUserEmailAndPassWord(user.getUserEmail(), user.getPassWord());
+		String[] encryptedPassword = EncryptUtil.getEncryptedPassword(user.getPassWord(), userSalt.getSalt());
+		
+		User userData = userRepo.findByUserEmailAndPassWord(user.getUserEmail(), encryptedPassword[0]);
 		if(userData!=null) {
 			System.out.println(getJWTToken(userData.getUserEmail())); 
 			String jwtToken="Bearer " + getJWTToken(user.getUserEmail());

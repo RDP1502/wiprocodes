@@ -63,10 +63,10 @@ public class OrderServiceImpl implements OrderService {
 		Order extOrder = orderRepo.findById(id).get();
 		
 		if(extOrder.getId() == order.getId()) {
-			extOrder.setFoodId(order.getFoodId());
-			extOrder.setItemName(order.getItemName());
+			extOrder.setFoodIds(order.getFoodIds());
+			extOrder.setOrderId(order.getOrderId());
 			extOrder.setOrderTime(order.getOrderTime());
-			extOrder.setQuantity(order.getQuantity());
+			
 			extOrder.setOrderValue(order.getOrderValue());
 			orderRepo.save(extOrder);
 			return new ResponseEntity<>("Order updated successfully", HttpStatus.OK);

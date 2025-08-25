@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FoodService } from '../../Services/food-service';
 import { Food } from '../../Interface/food';
 
+
 @Component({
   selector: 'app-food-list',
   imports: [],
@@ -20,6 +21,7 @@ export class FoodList {
 
   ngOnInit(){
     this.foodService.getFoods().subscribe((data)=>{
+      let tokendata:any=localStorage.getItem("token");
       // console.log(data)
       this.foods = data;
       this.cdr.detectChanges()
@@ -28,5 +30,13 @@ export class FoodList {
       console.log(error)
     })
   }
+
+  logout(){
+    localStorage.removeItem('token')
+    this.router.navigate(['/login'])
+    
+  }
+
+
 
 }

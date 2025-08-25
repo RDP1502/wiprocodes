@@ -41,6 +41,7 @@ export class Login {
     console.log("inside login ")
     this.userService.login(this.user).subscribe((token)=>{
       this.jwtToken = token;
+      // console.log("jwt token is", this.jwtToken)
       localStorage.setItem('tokenValue', this.jwtToken.token)
       // console.log("jwt token is", this.jwtToken)
       this.router.navigate(['/food'])
@@ -48,9 +49,5 @@ export class Login {
       console.log("error while sign in ", error)
     }
   )
-  
   }
-
-   
-
 }

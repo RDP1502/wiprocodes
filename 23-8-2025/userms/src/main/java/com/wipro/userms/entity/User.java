@@ -25,5 +25,8 @@ public class User {
 	
 	@Column(name = "user_password")
 	String passWord;
+	
+	@Column
+	String salt;
 
 }
