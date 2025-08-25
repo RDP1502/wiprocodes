@@ -1,0 +1,67 @@
+<!-- <app-reactive1></app-reactive1> -->
+<app-reactive2></app-reactive2>
+<!-- 
+@for (city of cities; track $index) {
+<mat-list role="list">
+  <mat-list-item role="listitem">{{city}}</mat-list-item>
+  
+</mat-list>
+}
+
+<h2>Ex 2</h2>
+
+<button matButton="elevated" (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder=" name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button matButton matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your Age</ng-template>
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Age"
+               required>
+      </mat-form-field>
+     <div>
+        <button matButton matStepperNext>Next</button>
+      </div>
+      </form>
+       <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Fill out your Email</ng-template>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="thirdCtrl" placeholder="Email"
+               required>
+        <!-- <div>
+        <button matButton matStepperNext>Next</button>
+      </div>        -->
+      <!-- </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious>Back</button>
+        <button matButton matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button matButton matStepperPrevious>Back</button>
+      <button matButton (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+ --> -->
+
