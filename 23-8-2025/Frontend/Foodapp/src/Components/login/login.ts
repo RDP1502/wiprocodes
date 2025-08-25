@@ -1,13 +1,14 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../../Services/user-service';
 import { User } from '../../Interface/user';
 import { FormsModule } from '@angular/forms';
 import { JwtToken } from '../../Interface/jwt-token';
 
+
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })

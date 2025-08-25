@@ -39,7 +39,7 @@ public class UserController {
 	{
 		 userServie.deleteById(id);
 	}
-	@PostMapping
+	@PostMapping("/login/register")
 	void save(@RequestBody User user)
 	{
 		userServie.save(user);

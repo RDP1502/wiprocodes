@@ -21,5 +21,9 @@ export class UserService {
   getUser():Observable<User[]>{
     return this.http.get<User[]>(this.url)
   }
+
+  createUser(user:User):Observable<void>{
+    return this.http.post<void>(`${this.url}/login/register`, user)
+  }
   
 }
