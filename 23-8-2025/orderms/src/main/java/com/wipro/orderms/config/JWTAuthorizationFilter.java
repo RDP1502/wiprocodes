@@ -43,6 +43,8 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
             if (checkJWTToken(request)) {
             	System.out.println("--validated--");
                 Claims claims = validateToken(request);
+                String userId = claims.getSubject();
+                request.setAttribute("userId", userId);
                 if (claims.get("authorities") != null) {
                 	System.out.println("--check4--");
                     setUpSpringAuthentication(claims);

@@ -11,7 +11,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -30,16 +29,20 @@ public class Order {
 	@Column(name = "order_value")
 	double orderValue;
 	
+	@Column(name = "user_id")
+	int userId;
 	
 	@Column(name = "order_time")
 	LocalDate orderTime;
+	
+	@Column(name = "order_status")
+	String orderStatus;
 	
 	 @ElementCollection
 	    @CollectionTable(
 	        name = "order_foods",
 	        joinColumns = @JoinColumn(name = "order_id")
 	    )
-	    @Column(name = "food_id")
-	    private List<Integer> foodIds;
+	    private List<OrderItem> items;
 
 }

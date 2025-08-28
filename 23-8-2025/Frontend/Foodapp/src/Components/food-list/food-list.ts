@@ -37,6 +37,12 @@ export class FoodList {
     
   }
 
+  toCart(){
+    this.router.navigate(['/orders'])
+  }
 
+  orderNow(){
+    this.router.navigate(['/orders'])
+  }
 
 }

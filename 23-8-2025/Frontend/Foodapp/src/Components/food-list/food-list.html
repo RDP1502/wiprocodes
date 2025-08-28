@@ -6,6 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <button class="btn btn-danger ml-auto" (click)=" logout()">Logout</button>
+      <button class="btn btn-danger ms-2" (click)=" toCart()">cart</button>
     </div>
   </div>
 </nav>
@@ -21,7 +22,7 @@
             <h5 class="card-title">{{food.foodName}}</h5>
             <p class="card-text">{{food.description}}</p>
             <p class="card-text">{{food.price}}</p>
-            <a  class="btn btn-primary">Order Now</a>
+            <a  class="btn btn-primary" (click)="orderNow()">Order Now</a>
           </div>
         </div>
       </div>
