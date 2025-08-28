@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wipro.orderms.dto.Payment;
 import com.wipro.orderms.entity.Order;
 import com.wipro.orderms.service.OrderService;
 
@@ -54,6 +55,12 @@ public class OrderController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> delete(@PathVariable int id){
 		return orderService.delete(id);
+	}
+	
+	@PostMapping("/pay")
+	public Payment pay(@RequestBody Payment payment) {
+		orderService.pay(payment);
+		return payment;
 	}
 
 }

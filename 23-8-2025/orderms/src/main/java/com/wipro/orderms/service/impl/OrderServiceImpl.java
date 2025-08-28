@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpEntity;
@@ -14,12 +15,15 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 
 import com.wipro.orderms.dto.Food;
+import com.wipro.orderms.dto.Payment;
 import com.wipro.orderms.entity.Order;
 import com.wipro.orderms.entity.OrderItem;
 import com.wipro.orderms.entity.OrderMaster;
 import com.wipro.orderms.repo.OrderMasterRepo;
 import com.wipro.orderms.repo.OrderRepo;
 import com.wipro.orderms.service.OrderService;
+import com.wipro.orderms.util.AppConstant;
+
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -32,6 +36,9 @@ public class OrderServiceImpl implements OrderService {
 	
 	@Autowired
 	RestTemplate  restTemplate;
+	
+	@Autowired
+	KafkaTemplate kafkaTemplate;
 
 	@Override
 	public List<Order> findAll() {
@@ -125,6 +132,14 @@ public class OrderServiceImpl implements OrderService {
 			return new ResponseEntity<>("Order id not found", HttpStatus.NO_CONTENT);
 		}
 
+	}
+
+	@Override
+	public void pay(Payment payment) {
+		// TODO Auto-generated method stub
+		kafkaTemplate.send(AppConstant.OUTGOING_TOPIC_NAME, payment);
+		
+		
 	}
 
 }

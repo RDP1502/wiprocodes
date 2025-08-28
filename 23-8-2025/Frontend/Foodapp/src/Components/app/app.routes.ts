@@ -11,5 +11,5 @@ export const routes: Routes = [
     {path:'food', component:FoodList},
     {path: 'login/register', component: UserRegister},
     {path:'orders', component:OrderPage},
-    {path:'payment', component: Payment}
+    {path:'payment/:orderId/:orderPrice', component: Payment}
 ];

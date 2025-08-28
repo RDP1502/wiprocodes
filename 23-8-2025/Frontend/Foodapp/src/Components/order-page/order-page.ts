@@ -87,8 +87,9 @@ removeItem(i: number) {
     console.log(this.order)
     this.orderService.save(this.order).subscribe((data)=>{
     console.log(data);
+    this.order = data;
+    this.router.navigate(['/payment'+'/'+data.id+'/'+this.order.orderValue])
     })
-    this.router.navigate(['/payment'])
-
+    
 }
 }
