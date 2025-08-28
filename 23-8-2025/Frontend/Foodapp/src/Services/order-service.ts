@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Order } from '../Interface/order';
 import { BASE_URL } from '../Utils/appConstant';
+import { IPayment } from '../Interface/ipayment';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,16 @@ export class OrderService {
 
   getOrders():Observable<Order[]>{
     return this.http.get<Order[]>(BASE_URL+'/orders')
+  }
+
+  pay(payment:IPayment):Observable<IPayment>{
+    let token = localStorage.getItem('tokenValue')
+    let header:HttpHeaders = new HttpHeaders()
+    const headers = new HttpHeaders()
+    .set('Content-Type' , 'application/json')
+    .set('Authorization', `${token}`)
+    let url:string = BASE_URL+'/orders/pay'
+    return this.http.post<IPayment>(url, payment, {headers})
   }
 
 

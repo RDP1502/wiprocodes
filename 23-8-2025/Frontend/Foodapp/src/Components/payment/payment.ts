@@ -4,10 +4,11 @@ import { IPayment } from '../../Interface/ipayment';
 import { PaymentService } from '../../Services/payment-service';
 import { CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { OrderService } from '../../Services/order-service';
 
 @Component({
   selector: 'app-payment',
-  imports: [CurrencyPipe, FormsModule],
+  imports: [ FormsModule, CurrencyPipe],
   templateUrl: './payment.html',
   styleUrl: './payment.css'
 })
@@ -15,7 +16,8 @@ export class Payment {
 
   constructor(private router : Router,
     private activatedRoute: ActivatedRoute,
-    private paymentService: PaymentService
+    private paymentService: PaymentService,
+    private orderService: OrderService
 
   ){}
 
@@ -43,11 +45,9 @@ export class Payment {
       cvv:this.cvv
 
     };
-    this.paymentService.savePayment(payment).subscribe((data:IPayment)=>{
-
-      console.log(data);
-
-        
+    this.orderService.pay(payment).subscribe((data)=>{
+      console.log(data)
+      this.router.navigate(['/success'])
     })
   }
 
